@@ -29,7 +29,14 @@ Allowed service calls:
 - `cover.close_cover`
 - `cover.stop_cover`
 
-Allowed service calls take precedence over blocked service calls.
+## Blocking behavior
+
+When HomeKit Guard is enabled:
+
+- If only allowed service calls are configured, every HomeKit service call is blocked except the allowed ones.
+- If only blocked service calls are configured, only those service calls are blocked.
+- If both lists are configured, allowed service calls take precedence and the blocked list is applied to everything else.
+- If both lists are empty, no service calls are blocked.
 
 ## Installation
 

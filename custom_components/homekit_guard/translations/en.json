@@ -15,7 +15,7 @@
     "step": {
       "init": {
         "title": "HomeKit Guard options",
-        "description": "Choose Home Assistant service calls to block or allow. If the selector is not available in your Home Assistant version, enter comma-separated service names.",
+        "description": "Choose Home Assistant service calls to block or allow. If only allowed calls are configured, all other HomeKit calls are blocked. If only blocked calls are configured, only those calls are blocked.",
         "data": {
           "blocked_services": "Blocked service calls",
           "allowed_services": "Allowed service calls"

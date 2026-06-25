@@ -25,6 +25,7 @@ from .const import (
     SERVICE_DISABLE,
     SERVICE_ENABLE,
 )
+from .guard import should_block_service
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -85,9 +86,12 @@ class HomeKitGuardRuntime:
         normalized = _normalize_service_name(service_name)
         if not normalized or not self.enabled:
             return False
-        if normalized in self.allowed_services:
-            return False
-        return normalized in self.blocked_services
+
+        return should_block_service(
+            normalized,
+            self.blocked_services,
+            self.allowed_services,
+        )
 
 
 async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
