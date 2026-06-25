@@ -15,7 +15,7 @@
     "step": {
       "init": {
         "title": "HomeKit Guard options",
-        "description": "Enter comma-separated Home Assistant service names. Example: cover.open_cover, cover.set_cover_position",
+        "description": "Choose Home Assistant service calls to block or allow. If the selector is not available in your Home Assistant version, enter comma-separated service names.",
         "data": {
           "blocked_services": "Blocked service calls",
           "allowed_services": "Allowed service calls"

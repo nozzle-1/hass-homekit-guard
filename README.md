@@ -57,12 +57,16 @@ Allowed service calls take precedence over blocked service calls.
 
 After adding the integration, open its options from **Settings** > **Devices & services**.
 
-Configure service calls as comma-separated Home Assistant service names:
+Configure blocked and allowed service calls from the multi-select lists. The lists are populated from the service actions currently registered in Home Assistant.
+
+The selector allows custom values so you can keep or enter service calls that are not registered when the options screen is opened.
+
+Examples:
 
 - Blocked service calls: `cover.open_cover, cover.set_cover_position`
 - Allowed service calls: `cover.close_cover, cover.stop_cover`
 
-The options flow uses text fields for broad Home Assistant compatibility. If your Home Assistant version adds native searchable service selectors for custom integration options, this integration can be updated to use them later.
+If your Home Assistant version does not support native select selectors in custom integration options, the integration falls back to text fields accepting comma-separated service names.
 
 ## Usage
 
