@@ -1,0 +1,7 @@
+enable_homekit_guard:
+  name: Enable HomeKit Guard
+  description: Enable HomeKit Guard so configured HomeKit service calls are blocked.
+
+disable_homekit_guard:
+  name: Disable HomeKit Guard
+  description: Disable HomeKit Guard so HomeKit service calls are allowed.

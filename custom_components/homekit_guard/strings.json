@@ -1,0 +1,33 @@
+{
+  "title": "HomeKit Guard",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Set up HomeKit Guard",
+        "description": "Install HomeKit Guard to control whether selected HomeKit Bridge commands are blocked."
+      }
+    },
+    "abort": {
+      "already_configured": "HomeKit Guard is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "HomeKit Guard options",
+        "description": "Enter comma-separated Home Assistant service names. Example: cover.open_cover, cover.set_cover_position",
+        "data": {
+          "blocked_services": "Blocked service calls",
+          "allowed_services": "Allowed service calls"
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "status": {
+        "name": "Status"
+      }
+    }
+  }
+}
