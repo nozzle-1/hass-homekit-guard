@@ -187,7 +187,7 @@ def _patch_homekit_accessory(hass: HomeAssistant) -> None:
 
     original = HomeAccessory.async_call_service
 
-    async def guarded_async_call_service(self: Any, *args: Any, **kwargs: Any) -> Any:
+    def guarded_async_call_service(self: Any, *args: Any, **kwargs: Any) -> Any:
         runtime = hass.data.get(DOMAIN, {}).get("runtime")
         service_name = _extract_service_name(args, kwargs)
 
@@ -198,10 +198,16 @@ def _patch_homekit_accessory(hass: HomeAssistant) -> None:
                 getattr(self, "display_name", getattr(self, "aid", "unknown")),
             )
             return None
+        if runtime is not None and runtime.enabled and service_name is None:
+            _LOGGER.warning(
+                "HomeKit Guard saw a HomeKit service call from accessory %s but could not determine the Home Assistant service name; allowing the call",
+                getattr(self, "display_name", getattr(self, "aid", "unknown")),
+            )
 
         result = original(self, *args, **kwargs)
         if inspect.isawaitable(result):
-            return await result
+            hass.async_create_task(result)
+            return None
         return result
 
     domain_data["original_async_call_service"] = original
