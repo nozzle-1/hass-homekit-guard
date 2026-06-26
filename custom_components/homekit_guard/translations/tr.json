@@ -1,0 +1,33 @@
+{
+  "title": "HomeKit Guard",
+  "config": {
+    "step": {
+      "user": {
+        "title": "HomeKit Guard'ı kur",
+        "description": "HomeKit tarafından tetiklenen Home Assistant eylemlerini engellemek için HomeKit Guard'ı yükleyin."
+      }
+    },
+    "abort": {
+      "already_configured": "HomeKit Guard zaten yapılandırılmış."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Seçenekler",
+        "description": "Engellenecek veya izin verilecek Home Assistant eylemlerini seçin. Yalnızca izin verilen eylemler yapılandırılırsa, diğer tüm HomeKit eylemleri engellenir. Yalnızca engellenen eylemler yapılandırılırsa, yalnızca bu eylemler engellenir.",
+        "data": {
+          "blocked_services": "Engellenen eylemler",
+          "allowed_services": "İzin verilen eylemler"
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "status": {
+        "name": "Durum"
+      }
+    }
+  }
+}

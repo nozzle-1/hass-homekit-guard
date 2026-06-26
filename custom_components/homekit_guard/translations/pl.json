@@ -1,0 +1,33 @@
+{
+  "title": "HomeKit Guard",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Skonfiguruj HomeKit Guard",
+        "description": "Zainstaluj HomeKit Guard, aby blokować akcje Home Assistant wywoływane przez HomeKit."
+      }
+    },
+    "abort": {
+      "already_configured": "HomeKit Guard jest już skonfigurowany."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opcje",
+        "description": "Wybierz akcje Home Assistant, które mają być blokowane lub dozwolone. Jeśli skonfigurowano tylko dozwolone akcje, wszystkie inne akcje HomeKit będą blokowane. Jeśli skonfigurowano tylko blokowane akcje, blokowane będą tylko te akcje.",
+        "data": {
+          "blocked_services": "Blokowane akcje",
+          "allowed_services": "Dozwolone akcje"
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "status": {
+        "name": "Stan"
+      }
+    }
+  }
+}

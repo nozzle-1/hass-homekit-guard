@@ -1,0 +1,33 @@
+{
+  "title": "HomeKit Guard",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Nustatyti HomeKit Guard",
+        "description": "Įdiekite HomeKit Guard, kad blokuotumėte HomeKit suaktyvintus Home Assistant veiksmus."
+      }
+    },
+    "abort": {
+      "already_configured": "HomeKit Guard jau sukonfigūruota."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Parinktys",
+        "description": "Pasirinkite Home Assistant veiksmus, kuriuos norite blokuoti arba leisti. Jei sukonfigūruoti tik leidžiami veiksmai, visi kiti HomeKit veiksmai bus blokuojami. Jei sukonfigūruoti tik blokuojami veiksmai, bus blokuojami tik tie veiksmai.",
+        "data": {
+          "blocked_services": "Blokuojami veiksmai",
+          "allowed_services": "Leidžiami veiksmai"
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "status": {
+        "name": "Būsena"
+      }
+    }
+  }
+}

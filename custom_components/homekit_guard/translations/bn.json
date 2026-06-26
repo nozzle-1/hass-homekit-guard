@@ -1,0 +1,33 @@
+{
+  "title": "HomeKit Guard",
+  "config": {
+    "step": {
+      "user": {
+        "title": "HomeKit Guard সেট আপ করুন",
+        "description": "HomeKit দ্বারা চালু হওয়া Home Assistant অ্যাকশন ব্লক করতে HomeKit Guard ইনস্টল করুন।"
+      }
+    },
+    "abort": {
+      "already_configured": "HomeKit Guard ইতিমধ্যেই কনফিগার করা আছে।"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "বিকল্প",
+        "description": "ব্লক বা অনুমতি দেওয়ার জন্য Home Assistant অ্যাকশন নির্বাচন করুন। যদি শুধু অনুমোদিত অ্যাকশন কনফিগার করা থাকে, তবে অন্য সব HomeKit অ্যাকশন ব্লক করা হবে। যদি শুধু ব্লক করা অ্যাকশন কনফিগার করা থাকে, তবে শুধু সেই অ্যাকশনগুলো ব্লক করা হবে।",
+        "data": {
+          "blocked_services": "ব্লক করা অ্যাকশন",
+          "allowed_services": "অনুমোদিত অ্যাকশন"
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "status": {
+        "name": "অবস্থা"
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "title": "HomeKit Guard",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Nastavit HomeKit Guard",
+        "description": "Nainstalujte HomeKit Guard pro blokování akcí Home Assistant spuštěných přes HomeKit."
+      }
+    },
+    "abort": {
+      "already_configured": "HomeKit Guard je již nakonfigurován."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Možnosti",
+        "description": "Vyberte akce Home Assistant, které chcete blokovat nebo povolit. Pokud jsou nakonfigurovány pouze povolené akce, všechny ostatní akce HomeKit budou blokovány. Pokud jsou nakonfigurovány pouze blokované akce, budou blokovány pouze tyto akce.",
+        "data": {
+          "blocked_services": "Blokované akce",
+          "allowed_services": "Povolené akce"
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "status": {
+        "name": "Stav"
+      }
+    }
+  }
+}

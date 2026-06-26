@@ -1,0 +1,33 @@
+{
+  "title": "HomeKit Guard",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Agordi HomeKit Guard",
+        "description": "Instalu HomeKit Guard por bloki Home Assistant-agojn ekigitajn de HomeKit."
+      }
+    },
+    "abort": {
+      "already_configured": "HomeKit Guard jam estas agordita."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opcioj",
+        "description": "Elektu Home Assistant-agojn por bloki aŭ permesi. Se nur permesitaj agoj estas agorditaj, ĉiuj aliaj HomeKit-agoj estas blokataj. Se nur blokitaj agoj estas agorditaj, nur tiuj agoj estas blokataj.",
+        "data": {
+          "blocked_services": "Blokitaj agoj",
+          "allowed_services": "Permesitaj agoj"
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "status": {
+        "name": "Stato"
+      }
+    }
+  }
+}

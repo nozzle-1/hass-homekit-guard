@@ -1,0 +1,33 @@
+{
+  "title": "HomeKit Guard",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Konfiguratu HomeKit Guard",
+        "description": "Instalatu HomeKit Guard HomeKitek abiarazitako Home Assistant ekintzak blokeatzeko."
+      }
+    },
+    "abort": {
+      "already_configured": "HomeKit Guard dagoeneko konfiguratuta dago."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Aukerak",
+        "description": "Aukeratu blokeatu edo baimendu nahi dituzun Home Assistant ekintzak. Baimendutako ekintzak bakarrik konfiguratzen badira, gainerako HomeKit ekintza guztiak blokeatuko dira. Blokeatutako ekintzak bakarrik konfiguratzen badira, ekintza horiek bakarrik blokeatuko dira.",
+        "data": {
+          "blocked_services": "Blokeatutako ekintzak",
+          "allowed_services": "Baimendutako ekintzak"
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "status": {
+        "name": "Egoera"
+      }
+    }
+  }
+}

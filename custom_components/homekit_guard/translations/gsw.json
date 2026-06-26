@@ -1,0 +1,33 @@
+{
+  "title": "HomeKit Guard",
+  "config": {
+    "step": {
+      "user": {
+        "title": "HomeKit Guard iirichte",
+        "description": "Installier HomeKit Guard, zum Home Assistant-Aktione z'blockiere, wo vo HomeKit usglöst wärde."
+      }
+    },
+    "abort": {
+      "already_configured": "HomeKit Guard isch scho konfiguriert."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Optione",
+        "description": "Wähl Home Assistant-Aktione us, wo blockiert oder erlaubt wärde söllid. Wenn nume erlaubti Aktione konfiguriert sind, wärde alli andere HomeKit-Aktione blockiert. Wenn nume blockierti Aktione konfiguriert sind, wärde nume die Aktione blockiert.",
+        "data": {
+          "blocked_services": "Blockierti Aktione",
+          "allowed_services": "Erlaubti Aktione"
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "status": {
+        "name": "Status"
+      }
+    }
+  }
+}

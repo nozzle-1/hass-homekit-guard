@@ -1,0 +1,33 @@
+{
+  "title": "HomeKit Guard",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Socraigh HomeKit Guard",
+        "description": "Suiteáil HomeKit Guard chun gníomhartha Home Assistant a spreagann HomeKit a bhlocáil."
+      }
+    },
+    "abort": {
+      "already_configured": "Tá HomeKit Guard cumraithe cheana féin."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Roghanna",
+        "description": "Roghnaigh gníomhartha Home Assistant le blocáil nó le ceadú. Má chumraítear gníomhartha ceadaithe amháin, cuirfear bac ar gach gníomh HomeKit eile. Má chumraítear gníomhartha blocáilte amháin, ní chuirfear bac ach ar na gníomhartha sin.",
+        "data": {
+          "blocked_services": "Gníomhartha blocáilte",
+          "allowed_services": "Gníomhartha ceadaithe"
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "status": {
+        "name": "Stádas"
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "title": "HomeKit Guard",
+  "config": {
+    "step": {
+      "user": {
+        "title": "إعداد HomeKit Guard",
+        "description": "ثبّت HomeKit Guard لحظر إجراءات Home Assistant التي يشغّلها HomeKit."
+      }
+    },
+    "abort": {
+      "already_configured": "تم تكوين HomeKit Guard بالفعل."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "الخيارات",
+        "description": "اختر إجراءات Home Assistant التي تريد حظرها أو السماح بها. إذا تم تكوين الإجراءات المسموح بها فقط، فسيتم حظر جميع إجراءات HomeKit الأخرى. إذا تم تكوين الإجراءات المحظورة فقط، فسيتم حظر تلك الإجراءات فقط.",
+        "data": {
+          "blocked_services": "الإجراءات المحظورة",
+          "allowed_services": "الإجراءات المسموح بها"
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "status": {
+        "name": "الحالة"
+      }
+    }
+  }
+}

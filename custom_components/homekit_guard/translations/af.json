@@ -1,0 +1,33 @@
+{
+  "title": "HomeKit Guard",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Stel HomeKit Guard op",
+        "description": "Installeer HomeKit Guard om Home Assistant-aksies te blokkeer wat deur HomeKit geaktiveer word."
+      }
+    },
+    "abort": {
+      "already_configured": "HomeKit Guard is reeds gekonfigureer."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opsies",
+        "description": "Kies Home Assistant-aksies om te blokkeer of toe te laat. As slegs toegelate aksies gekonfigureer is, word alle ander HomeKit-aksies geblokkeer. As slegs geblokkeerde aksies gekonfigureer is, word slegs daardie aksies geblokkeer.",
+        "data": {
+          "blocked_services": "Geblokkeerde aksies",
+          "allowed_services": "Toegelate aksies"
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "status": {
+        "name": "Status"
+      }
+    }
+  }
+}

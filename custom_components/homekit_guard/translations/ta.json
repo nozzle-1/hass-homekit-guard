@@ -1,0 +1,33 @@
+{
+  "title": "HomeKit Guard",
+  "config": {
+    "step": {
+      "user": {
+        "title": "HomeKit Guard அமைக்கவும்",
+        "description": "HomeKit மூலம் தொடங்கப்படும் Home Assistant செயல்களைத் தடுக்க HomeKit Guard-ஐ நிறுவவும்."
+      }
+    },
+    "abort": {
+      "already_configured": "HomeKit Guard ஏற்கனவே கட்டமைக்கப்பட்டுள்ளது."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "விருப்பங்கள்",
+        "description": "தடுக்க அல்லது அனுமதிக்க Home Assistant செயல்களைத் தேர்வு செய்யவும். அனுமதிக்கப்பட்ட செயல்கள் மட்டும் கட்டமைக்கப்பட்டிருந்தால், மற்ற அனைத்து HomeKit செயல்களும் தடுக்கப்படும். தடுக்கப்பட்ட செயல்கள் மட்டும் கட்டமைக்கப்பட்டிருந்தால், அந்த செயல்கள் மட்டும் தடுக்கப்படும்.",
+        "data": {
+          "blocked_services": "தடுக்கப்பட்ட செயல்கள்",
+          "allowed_services": "அனுமதிக்கப்பட்ட செயல்கள்"
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "status": {
+        "name": "நிலை"
+      }
+    }
+  }
+}

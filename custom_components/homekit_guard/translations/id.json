@@ -1,0 +1,33 @@
+{
+  "title": "HomeKit Guard",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Siapkan HomeKit Guard",
+        "description": "Pasang HomeKit Guard untuk memblokir tindakan Home Assistant yang dipicu oleh HomeKit."
+      }
+    },
+    "abort": {
+      "already_configured": "HomeKit Guard sudah dikonfigurasi."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opsi",
+        "description": "Pilih tindakan Home Assistant yang akan diblokir atau diizinkan. Jika hanya tindakan yang diizinkan yang dikonfigurasi, semua tindakan HomeKit lainnya akan diblokir. Jika hanya tindakan yang diblokir yang dikonfigurasi, hanya tindakan tersebut yang akan diblokir.",
+        "data": {
+          "blocked_services": "Tindakan yang diblokir",
+          "allowed_services": "Tindakan yang diizinkan"
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "status": {
+        "name": "Status"
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "title": "HomeKit Guard",
+  "config": {
+    "step": {
+      "user": {
+        "title": "راه‌اندازی HomeKit Guard",
+        "description": "HomeKit Guard را نصب کنید تا اقدام‌های Home Assistant که توسط HomeKit فعال می‌شوند مسدود شوند."
+      }
+    },
+    "abort": {
+      "already_configured": "HomeKit Guard از قبل پیکربندی شده است."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "گزینه‌ها",
+        "description": "اقدام‌های Home Assistant را برای مسدود کردن یا مجاز کردن انتخاب کنید. اگر فقط اقدام‌های مجاز پیکربندی شوند، همه اقدام‌های دیگر HomeKit مسدود می‌شوند. اگر فقط اقدام‌های مسدود پیکربندی شوند، فقط همان اقدام‌ها مسدود می‌شوند.",
+        "data": {
+          "blocked_services": "اقدام‌های مسدودشده",
+          "allowed_services": "اقدام‌های مجاز"
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "status": {
+        "name": "وضعیت"
+      }
+    }
+  }
+}

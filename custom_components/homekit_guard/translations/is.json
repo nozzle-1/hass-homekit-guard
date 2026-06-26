@@ -1,0 +1,33 @@
+{
+  "title": "HomeKit Guard",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Setja upp HomeKit Guard",
+        "description": "Settu upp HomeKit Guard til að loka fyrir Home Assistant-aðgerðir sem HomeKit ræsir."
+      }
+    },
+    "abort": {
+      "already_configured": "HomeKit Guard er þegar stillt."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Valkostir",
+        "description": "Veldu Home Assistant-aðgerðir til að loka fyrir eða leyfa. Ef aðeins leyfðar aðgerðir eru stilltar verða allar aðrar HomeKit-aðgerðir lokaðar. Ef aðeins lokaðar aðgerðir eru stilltar verða aðeins þær aðgerðir lokaðar.",
+        "data": {
+          "blocked_services": "Lokaðar aðgerðir",
+          "allowed_services": "Leyfðar aðgerðir"
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "status": {
+        "name": "Staða"
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "title": "HomeKit Guard",
+  "config": {
+    "step": {
+      "user": {
+        "title": "设置 HomeKit Guard",
+        "description": "安装 HomeKit Guard，以阻止由 HomeKit 触发的 Home Assistant 操作。"
+      }
+    },
+    "abort": {
+      "already_configured": "HomeKit Guard 已配置。"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "选项",
+        "description": "选择要阻止或允许的 Home Assistant 操作。如果只配置允许的操作，所有其他 HomeKit 操作都会被阻止。如果只配置阻止的操作，则只会阻止这些操作。",
+        "data": {
+          "blocked_services": "已阻止的操作",
+          "allowed_services": "已允许的操作"
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "status": {
+        "name": "状态"
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "title": "HomeKit Guard",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Nastavi HomeKit Guard",
+        "description": "Namestite HomeKit Guard za blokiranje dejanj Home Assistant, ki jih sproži HomeKit."
+      }
+    },
+    "abort": {
+      "already_configured": "HomeKit Guard je že konfiguriran."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Možnosti",
+        "description": "Izberite dejanja Home Assistant, ki jih želite blokirati ali dovoliti. Če so konfigurirana samo dovoljena dejanja, bodo vsa druga dejanja HomeKit blokirana. Če so konfigurirana samo blokirana dejanja, bodo blokirana samo ta dejanja.",
+        "data": {
+          "blocked_services": "Blokirana dejanja",
+          "allowed_services": "Dovoljena dejanja"
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "status": {
+        "name": "Stanje"
+      }
+    }
+  }
+}

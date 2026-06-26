@@ -1,0 +1,33 @@
+{
+  "title": "HomeKit Guard",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Set opp HomeKit Guard",
+        "description": "Installer HomeKit Guard for å blokkere Home Assistant-handlingar som blir utløyste av HomeKit."
+      }
+    },
+    "abort": {
+      "already_configured": "HomeKit Guard er allereie konfigurert."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Val",
+        "description": "Vel Home Assistant-handlingar som skal blokkerast eller tillatast. Viss berre tillatne handlingar er konfigurerte, blir alle andre HomeKit-handlingar blokkerte. Viss berre blokkerte handlingar er konfigurerte, blir berre desse handlingane blokkerte.",
+        "data": {
+          "blocked_services": "Blokkerte handlingar",
+          "allowed_services": "Tillatne handlingar"
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "status": {
+        "name": "Status"
+      }
+    }
+  }
+}

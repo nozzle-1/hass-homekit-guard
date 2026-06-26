@@ -1,0 +1,33 @@
+{
+  "title": "HomeKit Guard",
+  "config": {
+    "step": {
+      "user": {
+        "title": "設定 HomeKit Guard",
+        "description": "安裝 HomeKit Guard，以封鎖由 HomeKit 觸發的 Home Assistant 動作。"
+      }
+    },
+    "abort": {
+      "already_configured": "HomeKit Guard 已設定。"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "選項",
+        "description": "選擇要封鎖或允許的 Home Assistant 動作。如果只設定允許的動作，所有其他 HomeKit 動作都會被封鎖。如果只設定封鎖的動作，則只會封鎖這些動作。",
+        "data": {
+          "blocked_services": "已封鎖的動作",
+          "allowed_services": "已允許的動作"
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "status": {
+        "name": "狀態"
+      }
+    }
+  }
+}

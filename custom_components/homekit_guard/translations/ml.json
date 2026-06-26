@@ -1,0 +1,33 @@
+{
+  "title": "HomeKit Guard",
+  "config": {
+    "step": {
+      "user": {
+        "title": "HomeKit Guard സജ്ജീകരിക്കുക",
+        "description": "HomeKit ട്രിഗർ ചെയ്യുന്ന Home Assistant പ്രവർത്തനങ്ങൾ തടയാൻ HomeKit Guard ഇൻസ്റ്റാൾ ചെയ്യുക."
+      }
+    },
+    "abort": {
+      "already_configured": "HomeKit Guard ഇതിനകം കോൺഫിഗർ ചെയ്തിട്ടുണ്ട്."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "ഓപ്ഷനുകൾ",
+        "description": "തടയാനോ അനുവദിക്കാനോ Home Assistant പ്രവർത്തനങ്ങൾ തിരഞ്ഞെടുക്കുക. അനുവദിച്ച പ്രവർത്തനങ്ങൾ മാത്രം കോൺഫിഗർ ചെയ്താൽ, മറ്റ് എല്ലാ HomeKit പ്രവർത്തനങ്ങളും തടയും. തടഞ്ഞ പ്രവർത്തനങ്ങൾ മാത്രം കോൺഫിഗർ ചെയ്താൽ, ആ പ്രവർത്തനങ്ങൾ മാത്രം തടയും.",
+        "data": {
+          "blocked_services": "തടഞ്ഞ പ്രവർത്തനങ്ങൾ",
+          "allowed_services": "അനുവദിച്ച പ്രവർത്തനങ്ങൾ"
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "status": {
+        "name": "സ്ഥിതി"
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "title": "HomeKit Guard",
+  "config": {
+    "step": {
+      "user": {
+        "title": "ตั้งค่า HomeKit Guard",
+        "description": "ติดตั้ง HomeKit Guard เพื่อบล็อกการกระทำของ Home Assistant ที่ถูกเรียกโดย HomeKit"
+      }
+    },
+    "abort": {
+      "already_configured": "HomeKit Guard ได้รับการกำหนดค่าแล้ว"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "ตัวเลือก",
+        "description": "เลือกการกระทำของ Home Assistant ที่ต้องการบล็อกหรืออนุญาต หากกำหนดค่าเฉพาะการกระทำที่อนุญาต การกระทำ HomeKit อื่นทั้งหมดจะถูกบล็อก หากกำหนดค่าเฉพาะการกระทำที่ถูกบล็อก จะบล็อกเฉพาะการกระทำเหล่านั้น",
+        "data": {
+          "blocked_services": "การกระทำที่ถูกบล็อก",
+          "allowed_services": "การกระทำที่อนุญาต"
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "status": {
+        "name": "สถานะ"
+      }
+    }
+  }
+}

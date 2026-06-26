@@ -1,0 +1,33 @@
+{
+  "title": "HomeKit Guard",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Ρύθμιση του HomeKit Guard",
+        "description": "Εγκαταστήστε το HomeKit Guard για να αποκλείετε ενέργειες του Home Assistant που ενεργοποιούνται από το HomeKit."
+      }
+    },
+    "abort": {
+      "already_configured": "Το HomeKit Guard έχει ήδη ρυθμιστεί."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Επιλογές",
+        "description": "Επιλέξτε ενέργειες του Home Assistant για αποκλεισμό ή αποδοχή. Αν έχουν ρυθμιστεί μόνο επιτρεπόμενες ενέργειες, όλες οι άλλες ενέργειες HomeKit θα αποκλείονται. Αν έχουν ρυθμιστεί μόνο αποκλεισμένες ενέργειες, θα αποκλείονται μόνο αυτές οι ενέργειες.",
+        "data": {
+          "blocked_services": "Αποκλεισμένες ενέργειες",
+          "allowed_services": "Επιτρεπόμενες ενέργειες"
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "status": {
+        "name": "Κατάσταση"
+      }
+    }
+  }
+}

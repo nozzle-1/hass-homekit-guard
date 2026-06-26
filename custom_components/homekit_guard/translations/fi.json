@@ -1,0 +1,33 @@
+{
+  "title": "HomeKit Guard",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Määritä HomeKit Guard",
+        "description": "Asenna HomeKit Guard estääksesi HomeKitin käynnistämät Home Assistant -toiminnot."
+      }
+    },
+    "abort": {
+      "already_configured": "HomeKit Guard on jo määritetty."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Asetukset",
+        "description": "Valitse estettävät tai sallittavat Home Assistant -toiminnot. Jos vain sallitut toiminnot on määritetty, kaikki muut HomeKit-toiminnot estetään. Jos vain estetyt toiminnot on määritetty, vain ne toiminnot estetään.",
+        "data": {
+          "blocked_services": "Estetyt toiminnot",
+          "allowed_services": "Sallitut toiminnot"
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "status": {
+        "name": "Tila"
+      }
+    }
+  }
+}

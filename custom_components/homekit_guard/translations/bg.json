@@ -1,0 +1,33 @@
+{
+  "title": "HomeKit Guard",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Настройване на HomeKit Guard",
+        "description": "Инсталирайте HomeKit Guard, за да блокирате действия на Home Assistant, задействани от HomeKit."
+      }
+    },
+    "abort": {
+      "already_configured": "HomeKit Guard вече е конфигуриран."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Опции",
+        "description": "Изберете действия на Home Assistant, които да бъдат блокирани или разрешени. Ако са конфигурирани само разрешени действия, всички други действия на HomeKit се блокират. Ако са конфигурирани само блокирани действия, се блокират само те.",
+        "data": {
+          "blocked_services": "Блокирани действия",
+          "allowed_services": "Разрешени действия"
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "status": {
+        "name": "Състояние"
+      }
+    }
+  }
+}

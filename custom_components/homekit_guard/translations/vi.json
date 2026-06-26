@@ -1,0 +1,33 @@
+{
+  "title": "HomeKit Guard",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Thiết lập HomeKit Guard",
+        "description": "Cài đặt HomeKit Guard để chặn các hành động Home Assistant do HomeKit kích hoạt."
+      }
+    },
+    "abort": {
+      "already_configured": "HomeKit Guard đã được cấu hình."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Tùy chọn",
+        "description": "Chọn các hành động Home Assistant để chặn hoặc cho phép. Nếu chỉ cấu hình các hành động được cho phép, tất cả hành động HomeKit khác sẽ bị chặn. Nếu chỉ cấu hình các hành động bị chặn, chỉ những hành động đó sẽ bị chặn.",
+        "data": {
+          "blocked_services": "Hành động bị chặn",
+          "allowed_services": "Hành động được phép"
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "status": {
+        "name": "Trạng thái"
+      }
+    }
+  }
+}

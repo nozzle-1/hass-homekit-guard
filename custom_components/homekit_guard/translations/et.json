@@ -1,0 +1,33 @@
+{
+  "title": "HomeKit Guard",
+  "config": {
+    "step": {
+      "user": {
+        "title": "HomeKit Guardi seadistamine",
+        "description": "Paigalda HomeKit Guard, et blokeerida HomeKiti käivitatud Home Assistanti toiminguid."
+      }
+    },
+    "abort": {
+      "already_configured": "HomeKit Guard on juba seadistatud."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Valikud",
+        "description": "Vali Home Assistanti toimingud, mida blokeerida või lubada. Kui seadistatud on ainult lubatud toimingud, blokeeritakse kõik muud HomeKiti toimingud. Kui seadistatud on ainult blokeeritud toimingud, blokeeritakse ainult need toimingud.",
+        "data": {
+          "blocked_services": "Blokeeritud toimingud",
+          "allowed_services": "Lubatud toimingud"
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "status": {
+        "name": "Olek"
+      }
+    }
+  }
+}

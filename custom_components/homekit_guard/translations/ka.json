@@ -1,0 +1,33 @@
+{
+  "title": "HomeKit Guard",
+  "config": {
+    "step": {
+      "user": {
+        "title": "HomeKit Guard-ის დაყენება",
+        "description": "დააყენეთ HomeKit Guard, რათა დაბლოკოთ HomeKit-ის მიერ გაშვებული Home Assistant-ის მოქმედებები."
+      }
+    },
+    "abort": {
+      "already_configured": "HomeKit Guard უკვე კონფიგურირებულია."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "პარამეტრები",
+        "description": "აირჩიეთ Home Assistant-ის მოქმედებები დასაბლოკად ან დასაშვებად. თუ კონფიგურირებულია მხოლოდ დაშვებული მოქმედებები, ყველა სხვა HomeKit მოქმედება დაიბლოკება. თუ კონფიგურირებულია მხოლოდ დაბლოკილი მოქმედებები, დაიბლოკება მხოლოდ ეს მოქმედებები.",
+        "data": {
+          "blocked_services": "დაბლოკილი მოქმედებები",
+          "allowed_services": "დაშვებული მოქმედებები"
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "status": {
+        "name": "სტატუსი"
+      }
+    }
+  }
+}

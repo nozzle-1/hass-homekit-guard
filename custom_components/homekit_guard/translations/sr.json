@@ -1,0 +1,33 @@
+{
+  "title": "HomeKit Guard",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Подеси HomeKit Guard",
+        "description": "Инсталирајте HomeKit Guard да блокирате Home Assistant радње које покреће HomeKit."
+      }
+    },
+    "abort": {
+      "already_configured": "HomeKit Guard је већ конфигурисан."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Опције",
+        "description": "Изаберите Home Assistant радње које желите да блокирате или дозволите. Ако су конфигурисане само дозвољене радње, све остале HomeKit радње ће бити блокиране. Ако су конфигурисане само блокиране радње, биће блокиране само те радње.",
+        "data": {
+          "blocked_services": "Блокиране радње",
+          "allowed_services": "Дозвољене радње"
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "status": {
+        "name": "Статус"
+      }
+    }
+  }
+}

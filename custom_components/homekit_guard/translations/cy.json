@@ -1,0 +1,33 @@
+{
+  "title": "HomeKit Guard",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Sefydlu HomeKit Guard",
+        "description": "Gosodwch HomeKit Guard i rwystro gweithredoedd Home Assistant sy'n cael eu sbarduno gan HomeKit."
+      }
+    },
+    "abort": {
+      "already_configured": "Mae HomeKit Guard eisoes wedi'i ffurfweddu."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opsiynau",
+        "description": "Dewiswch weithredoedd Home Assistant i'w rhwystro neu eu caniatáu. Os mai dim ond gweithredoedd a ganiateir sydd wedi'u ffurfweddu, caiff pob gweithred HomeKit arall ei rhwystro. Os mai dim ond gweithredoedd wedi'u rhwystro sydd wedi'u ffurfweddu, dim ond y gweithredoedd hynny a gaiff eu rhwystro.",
+        "data": {
+          "blocked_services": "Gweithredoedd wedi'u rhwystro",
+          "allowed_services": "Gweithredoedd a ganiateir"
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "status": {
+        "name": "Statws"
+      }
+    }
+  }
+}

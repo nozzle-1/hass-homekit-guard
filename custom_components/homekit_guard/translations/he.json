@@ -1,0 +1,33 @@
+{
+  "title": "HomeKit Guard",
+  "config": {
+    "step": {
+      "user": {
+        "title": "הגדרת HomeKit Guard",
+        "description": "התקן את HomeKit Guard כדי לחסום פעולות Home Assistant שמופעלות על ידי HomeKit."
+      }
+    },
+    "abort": {
+      "already_configured": "HomeKit Guard כבר מוגדר."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "אפשרויות",
+        "description": "בחר פעולות Home Assistant לחסימה או לאישור. אם מוגדרות רק פעולות מותרות, כל שאר פעולות HomeKit ייחסמו. אם מוגדרות רק פעולות חסומות, רק פעולות אלה ייחסמו.",
+        "data": {
+          "blocked_services": "פעולות חסומות",
+          "allowed_services": "פעולות מותרות"
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "status": {
+        "name": "מצב"
+      }
+    }
+  }
+}

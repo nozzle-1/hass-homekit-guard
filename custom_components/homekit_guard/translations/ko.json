@@ -1,0 +1,33 @@
+{
+  "title": "HomeKit Guard",
+  "config": {
+    "step": {
+      "user": {
+        "title": "HomeKit Guard 설정",
+        "description": "HomeKit에서 트리거된 Home Assistant 작업을 차단하려면 HomeKit Guard를 설치하세요."
+      }
+    },
+    "abort": {
+      "already_configured": "HomeKit Guard가 이미 구성되어 있습니다."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "옵션",
+        "description": "차단하거나 허용할 Home Assistant 작업을 선택하세요. 허용된 작업만 구성하면 다른 모든 HomeKit 작업이 차단됩니다. 차단된 작업만 구성하면 해당 작업만 차단됩니다.",
+        "data": {
+          "blocked_services": "차단된 작업",
+          "allowed_services": "허용된 작업"
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "status": {
+        "name": "상태"
+      }
+    }
+  }
+}

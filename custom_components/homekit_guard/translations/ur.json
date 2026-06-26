@@ -1,0 +1,33 @@
+{
+  "title": "HomeKit Guard",
+  "config": {
+    "step": {
+      "user": {
+        "title": "HomeKit Guard سیٹ اپ کریں",
+        "description": "HomeKit کے ذریعے شروع ہونے والی Home Assistant کارروائیوں کو بلاک کرنے کے لیے HomeKit Guard انسٹال کریں۔"
+      }
+    },
+    "abort": {
+      "already_configured": "HomeKit Guard پہلے ہی کنفیگر ہے۔"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "اختیارات",
+        "description": "بلاک یا اجازت دینے کے لیے Home Assistant کارروائیاں منتخب کریں۔ اگر صرف اجازت یافتہ کارروائیاں کنفیگر ہوں تو دیگر تمام HomeKit کارروائیاں بلاک ہو جائیں گی۔ اگر صرف بلاک شدہ کارروائیاں کنفیگر ہوں تو صرف وہی کارروائیاں بلاک ہوں گی۔",
+        "data": {
+          "blocked_services": "بلاک شدہ کارروائیاں",
+          "allowed_services": "اجازت یافتہ کارروائیاں"
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "status": {
+        "name": "حالت"
+      }
+    }
+  }
+}

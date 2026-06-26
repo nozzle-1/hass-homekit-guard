@@ -1,0 +1,33 @@
+{
+  "title": "HomeKit Guard",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Iestatīt HomeKit Guard",
+        "description": "Instalējiet HomeKit Guard, lai bloķētu HomeKit aktivizētās Home Assistant darbības."
+      }
+    },
+    "abort": {
+      "already_configured": "HomeKit Guard jau ir konfigurēts."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opcijas",
+        "description": "Izvēlieties Home Assistant darbības, kuras bloķēt vai atļaut. Ja ir konfigurētas tikai atļautās darbības, visas pārējās HomeKit darbības tiks bloķētas. Ja ir konfigurētas tikai bloķētās darbības, tiks bloķētas tikai šīs darbības.",
+        "data": {
+          "blocked_services": "Bloķētās darbības",
+          "allowed_services": "Atļautās darbības"
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "status": {
+        "name": "Statuss"
+      }
+    }
+  }
+}
