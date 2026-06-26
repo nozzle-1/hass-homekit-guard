@@ -1,8 +1,8 @@
-# HomeKit Guard
+![HomeKit Guard](docs/banner.png)
 
 Block selected HomeKit Bridge actions on demand before they reach Home Assistant.
 
-HomeKit Guard is useful when Siri/HomePod voice control is convenient most of the time, but too exposed in specific situations. For example: if a window facing the street is open, you may not want someone outside to shout a command at your HomePod and open covers, unlock something, or trigger another sensitive action.
+**HomeKit Guard** is useful when Siri/HomePod voice control is convenient most of the time, but too exposed in specific situations. For example: if a window facing the street is open, you may not want someone outside to shout a command at your HomePod and open covers, unlock something, or trigger another sensitive action.
 
 Turn the guard on when you need that extra barrier. Turn it off when normal HomeKit voice control is fine again.
 
