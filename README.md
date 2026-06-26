@@ -1,104 +1,116 @@
 # HomeKit Guard
 
-HomeKit Guard is a Home Assistant custom integration that can block selected HomeKit Bridge commands before they reach Home Assistant services.
+Block selected HomeKit Bridge actions on demand before they reach Home Assistant.
 
-It is designed for cases where HomeKit should be allowed to control some actions, such as closing or stopping covers, but should be prevented from running other actions, such as opening covers.
+HomeKit Guard is useful when Siri/HomePod voice control is convenient most of the time, but too exposed in specific situations. For example: if a window facing the street is open, you may not want someone outside to shout a command at your HomePod and open covers, unlock something, or trigger another sensitive action.
 
-## What it does
+Turn the guard on when you need that extra barrier. Turn it off when normal HomeKit voice control is fine again.
 
-- Adds a switch entity named `switch.homekit_guard_status`.
-- Adds the service actions:
-  - `homekit_guard.enable_homekit_guard`
-  - `homekit_guard.disable_homekit_guard`
-- Keeps the switch and service actions connected to the same internal guard state.
-- Persists the guard state across Home Assistant restarts.
-- Blocks only calls that pass through HomeKit Bridge's internal `HomeAccessory.async_call_service` path.
-- Does not block Home Assistant automations, scripts, dashboard actions, MQTT, physical buttons, or direct service calls.
+## Why use it
 
-When HomeKit Guard is enabled, blocked HomeKit-originating service calls are skipped and a warning is written to the Home Assistant log.
+- Block risky HomePod/Siri actions while keeping safer actions available.
+- Temporarily protect exposed rooms, street-facing windows, guests, rentals, or outdoor areas.
+- Keep Home Assistant automations, dashboards, scripts, MQTT, and physical controls working.
+- Control the guard from a switch, an automation, or two service actions.
+- Persist the guard state across Home Assistant restarts.
 
-## Default configuration
+## Example use cases
 
-Blocked service calls:
+- **Street-facing window open**: block `cover.open_cover` so someone outside cannot open blinds or shutters by voice.
+- **Night mode**: allow closing covers, but block opening covers until morning.
+- **Guest mode**: disable sensitive HomeKit voice actions while visitors are home.
+- **Outdoor HomePod**: block actions you never want triggered from a garden, balcony, or terrace.
+- **Temporary lockdown**: use an automation to enable the guard when a contact sensor, alarm mode, or presence state says the home is more exposed.
 
-- `cover.open_cover`
-- `cover.set_cover_position`
+## How it works
 
-Allowed service calls:
-
-- `cover.close_cover`
-- `cover.stop_cover`
-
-## Blocking behavior
-
-When HomeKit Guard is enabled:
-
-- If only allowed service calls are configured, every HomeKit service call is blocked except the allowed ones.
-- If only blocked service calls are configured, only those service calls are blocked.
-- If both lists are configured, allowed service calls take precedence and the blocked list is applied to everything else.
-- If both lists are empty, no service calls are blocked.
-
-## Installation
-
-### HACS custom repository
-
-1. Push this repository to GitHub.
-2. In Home Assistant, open **HACS**.
-3. Open the HACS menu and select **Custom repositories**.
-4. Add the repository URL.
-5. Select **Integration** as the category.
-6. Install **HomeKit Guard**.
-7. Restart Home Assistant.
-8. Go to **Settings** > **Devices & services** > **Add integration**.
-9. Search for **HomeKit Guard** and add it.
-
-### Manual installation
-
-1. Copy the `custom_components/homekit_guard` directory into your Home Assistant `custom_components` directory.
-2. Restart Home Assistant.
-3. Go to **Settings** > **Devices & services**.
-4. Select **Add integration**.
-5. Search for **HomeKit Guard** and add it.
-
-## Configuration
-
-After adding the integration, open its options from **Settings** > **Devices & services**.
-
-Configure blocked and allowed service calls from the multi-select lists. The lists are populated from the service actions currently registered in Home Assistant.
-
-The selector allows custom values so you can keep or enter service calls that are not registered when the options screen is opened.
-
-Examples:
-
-- Blocked service calls: `cover.open_cover, cover.set_cover_position`
-- Allowed service calls: `cover.close_cover, cover.stop_cover`
-
-If your Home Assistant version does not support native select selectors in custom integration options, the integration falls back to text fields accepting comma-separated service names.
-
-## Usage
-
-Turn on `switch.homekit_guard_status` to enable blocking.
-
-You can also call:
-
-```yaml
-service: homekit_guard.enable_homekit_guard
-```
-
-or:
-
-```yaml
-service: homekit_guard.disable_homekit_guard
-```
-
-## Important warning
-
-HomeKit Guard monkey-patches Home Assistant internals:
+HomeKit Guard patches Home Assistant's HomeKit Bridge service-call path:
 
 ```text
 homeassistant.components.homekit.accessories.HomeAccessory.async_call_service
 ```
 
-This is intentionally narrow so only HomeKit Bridge-originating calls are affected, but it depends on Home Assistant's private HomeKit implementation details. Home Assistant updates may change that method or its call signature, which can break this integration.
+When the guard is enabled, matching HomeKit-originating service calls are skipped and a warning is written to the Home Assistant log.
 
-The integration includes defensive handling for unknown call signatures. If it cannot identify a HomeKit service call safely, it allows the original Home Assistant method to run.
+It does **not** block Home Assistant automations, scripts, dashboard actions, MQTT, physical buttons, or direct service calls. The block is intentionally narrow: only commands passing through HomeKit Bridge are affected.
+
+## Default behavior
+
+By default, HomeKit Guard blocks opening covers while still allowing closing or stopping them.
+
+Blocked:
+
+- `cover.open_cover`
+- `cover.set_cover_position`
+
+Allowed:
+
+- `cover.close_cover`
+- `cover.stop_cover`
+
+You can change these lists from the integration options.
+
+## Blocking rules
+
+When HomeKit Guard is enabled:
+
+- If only allowed services are configured, every other HomeKit service call is blocked.
+- If only blocked services are configured, only those service calls are blocked.
+- If both lists are configured, allowed services take priority.
+- If both lists are empty, nothing is blocked.
+
+## Installation
+
+### HACS custom repository
+
+1. In Home Assistant, open **HACS**.
+2. Open **Custom repositories** from the HACS menu.
+3. Add this repository URL.
+4. Select **Integration** as the category.
+5. Install **HomeKit Guard**.
+6. Restart Home Assistant.
+7. Go to **Settings** > **Devices & services** > **Add integration**.
+8. Search for **HomeKit Guard** and add it.
+
+### Manual installation
+
+1. Copy `custom_components/homekit_guard` into your Home Assistant `custom_components` directory.
+2. Restart Home Assistant.
+3. Go to **Settings** > **Devices & services** > **Add integration**.
+4. Search for **HomeKit Guard** and add it.
+
+## Configuration
+
+Open **Settings** > **Devices & services** > **HomeKit Guard** > **Options**.
+
+Configure:
+
+- **Blocked services**: Home Assistant service calls to block when the guard is enabled.
+- **Allowed services**: service calls that should remain available from HomeKit.
+
+Examples:
+
+- Blocked services: `cover.open_cover`, `cover.set_cover_position`
+- Allowed services: `cover.close_cover`, `cover.stop_cover`
+
+The options form is populated from services currently registered in Home Assistant and also accepts custom service names. On older Home Assistant versions, it falls back to comma-separated text fields.
+
+## Usage
+
+Enable or disable the guard with:
+
+- `switch.homekit_guard_status`
+- `homekit_guard.enable_homekit_guard`
+- `homekit_guard.disable_homekit_guard`
+
+Example automation action:
+
+```yaml
+service: homekit_guard.enable_homekit_guard
+```
+
+## Important note
+
+HomeKit Guard depends on Home Assistant's private HomeKit Bridge internals. Home Assistant updates may change that implementation and break this integration.
+
+The integration handles unknown call signatures defensively: if it cannot safely identify a HomeKit service call, it allows the original Home Assistant method to run.
