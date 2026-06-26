@@ -1,5 +1,5 @@
 {
   "name": "HomeKit Guard",
   "render_readme": true,
-  "domains": ["homekit_guard"]
+  "hide_default_branch": true
 }
